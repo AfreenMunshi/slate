@@ -2,7 +2,7 @@
 title: API Reference
 
 language_tabs:
-  - ruby
+  - Ruby
 
 search: true
 ---
@@ -25,7 +25,7 @@ This example API documentation page was created with [Slate](http://github.com/t
 code here
 ```
 
-> The above command returns JSON structured like this:
+> JSON response:
 
 ```json
 {
@@ -79,7 +79,13 @@ id: &lt;String&gt; required
 
 ## Create Poll
 
-> The above command returns JSON structured like this:
+> Use this code:
+
+```ruby
+code here
+```
+
+> JSON response:
 
 ```json
 {
@@ -123,7 +129,7 @@ id: &lt;String&gt; required
 
 [POST]  /1/polls
 
-###params:
+### Params:
 
 title: &lt;String&gt; required,
 
@@ -133,6 +139,7 @@ tags: &lt;String&gt; optional # common separated values in string as tags.
 
 options: [&lt;String&gt; required, &lt;String&gt; required] required,
 
+#Comments
 
 ## Get specific comment details
 
@@ -156,7 +163,7 @@ code here
     {
       "id":2,
       "username":"AfreenMunshi",
-      "image":"http://pbs.twimg.com/profile_images/2839567895/7657a426b288e2008f4e6d1ac322f718_normal.jpeg"
+      "image":"AfreenMunshi.jpeg"
     }
   }
 }
@@ -171,5 +178,43 @@ This accepts a `poll_id` and a `comment_id` as parameter and return comment deta
 ### Params:
 
 poll_id: &lt;String&gt; required
+
 id: &lt;String&gt; required
+
+## Create a comment
+
+> Use this code:
+
+```ruby
+code here
+```
+
+> JSON response:
+
+```json
+{
+    "comments":[{
+        "id":17,
+        "text":"how are you",
+        "createdAt":"2014-07-04T00:49:19.161Z",
+        "createdAtInWords":"1 minute ago",
+        "author":{
+            "id":7,
+            "username":"Munshi.Afreen",
+            "image":"Munshi.Afreen.jpeg"
+        }
+    }]
+}
+```
+
+
+### URL:
+
+[POST]  /1/polls/:poll_id/comments
+
+### Params:
+
+text: &lt;String&gt; required
+
+poll_id: &lt;String&gt; required
 
